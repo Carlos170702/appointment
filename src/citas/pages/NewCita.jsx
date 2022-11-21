@@ -76,7 +76,7 @@ export const NewCita = ({ handleNewCita }) => {
                             return errors;
                         }}
 
-                        onSubmit={ async(values) => {
+                        onSubmit={async (values) => {
                             const error = await handleNewAppointment(values, handleNewCita)
                         }}
                     >

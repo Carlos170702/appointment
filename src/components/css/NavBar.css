@@ -1,121 +1,126 @@
 :root {
-    --fontPrimary: 'Kanit', sans-serif;
-    --fontSecundary: 'Roboto Mono', monospace;
+  --fontPrimary: "Kanit", sans-serif;
+  --fontSecundary: "Roboto Mono", monospace;
 }
 
 .NavBar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 10px 0px;
-    position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0px;
+  position: relative;
 }
 
 .NavBar__Logo {
-    width: 120px;
-    height: 70px;
-    background-color: wheat;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px;
+  width: 120px;
+  height: 70px;
+  background-color: wheat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
 }
 
 .NavBar__Logo p {
-    color: black;
-    font-family: arial;
-    font-size: 30px;
-    font-family: var(--fontSecundary);
+  color: black;
+  font-family: arial;
+  font-size: 30px;
+  font-family: var(--fontSecundary);
 }
 
 .NavBar__Logo img {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 .NavBar__hamburger {
-    color: wheat;
-    font-size: 1.5rem;
-    font-weight: 900;
-    cursor: pointer;
-    display: none;
+  color: wheat;
+  font-size: 1.5rem;
+  font-weight: 900;
+  cursor: pointer;
+  display: none;
 }
 
 .NavBar__enlaces {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
 }
 
 .NavBar__enlaces a {
-    color: white;
-    text-decoration: none;
-    font-family: var(--fontPrimary);
-    border-left: 2px solid wheat;
-    padding-left: 10px;
+  color: white;
+  text-decoration: none;
+  font-family: var(--fontPrimary);
+  border-left: 2px solid wheat;
+  padding-left: 10px;
 }
 
 .NavBar__enlaces a:hover {
-    border-bottom: 1px solid black;
+  border-bottom: 1px solid black;
 }
 
 .NavBar__logout {
-    background-color: white;
-    padding: 7px;
-    border-radius: 15px 0px 15px 0px;
-    border: none;
-    background-color: #a59bff;
-    cursor: pointer;
-    color: white;
-    font-family: var(--fontPrimary);
-    font-weight: bold;
-    text-transform: uppercase;
-    font-size: 15px;
-    transition: .5s ease-out;
+  background-color: white;
+  padding: 7px;
+  border-radius: 15px 0px 15px 0px;
+  border: none;
+  background-color: #a59bff;
+  cursor: pointer;
+  color: white;
+  font-family: var(--fontPrimary);
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 15px;
+  transition: 0.5s ease-out;
 }
 
 .NavBar__logout:hover {
-    background-color: #897cfc;
+  background-color: #897cfc;
 }
 
 @media (max-width: 800px) {
-    .NavBar__hamburger {
-        display: inline;
-    }
+  .NavBar__hamburger {
+    display: inline;
+  }
 
-    .NavBar__enlaces {
-        display: none;
-    }
+  .NavBar__enlaces {
+    display: none;
+  }
 
-    .NavBar__enlaces--position {
-        position: absolute;
-        top: 50px;
-        right: 0;
-        z-index: 2;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        background-color: #000000de;
-        padding: 10px;
-        border-radius: 5px;
-        font-family: var(--fontPrimary);
-        animation: alternate nav 1s;
-    }
+  .NavBar__enlaces--position {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #000000de;
+    padding: 10px;
+    border-radius: 5px;
+    font-family: var(--fontPrimary);
+    animation: alternate nav 1s;
+  }
 
-    .NavBar__enlaces--position a {
-        color: wheat;
-        letter-spacing: 2px;
-    }
+  .NavBar__enlaces--position a {
+    color: wheat;
+    letter-spacing: 2px;
+  }
+
+  .NavBar__Logo {
+    width: 70px;
+    height: 40px;
+  }
 }
 
 @keyframes nav {
-    0% {
-        transform: translateX(100px);
-    }
+  0% {
+    transform: translateX(100px);
+  }
 
-    100% {
-        transform: translateX(0);
-    }
+  100% {
+    transform: translateX(0);
+  }
 }

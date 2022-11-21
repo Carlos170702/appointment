@@ -1,6 +1,3 @@
-//assets
-import image from './logo.png'
-
 //icon
 import { FiAlignJustify, FiX } from 'react-icons/fi'
 
@@ -18,17 +15,17 @@ export const NavBar = () => {
     return (
         <nav className='NavBar'>
             <div className="NavBar__Logo">
-                <img src={image} alt="image logo" />
+                <img src='https://firebasestorage.googleapis.com/v0/b/carrlitos-8c495.appspot.com/o/logo.png?alt=media&token=7457acd7-7779-41c6-b655-abd79df3df89' alt="image logo" />
             </div>
             <div className={`NavBar__enlaces ${active ? 'NavBar__enlaces--position' : ''}`}>
-                <Link to={'/client'}>citas</Link>
+                <Link to={'/dashboard'}>citas</Link>
                 {rol === 'admin' && <Link to={'/pending'}>pendientes</Link>}
                 <Link to={'/Profile'}>perfil</Link>
                 <button
                     onClick={handleLogout}
                     className='NavBar__logout'
                 >
-                    Cerrar seccion
+                    Cerrar sesión
                 </button>
             </div>
             {
