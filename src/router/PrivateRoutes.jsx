@@ -5,7 +5,7 @@ import { AuthContext } from "../context/authContext"
 export const PrivateRoutes = ({ children }) => {
     const navigate = useNavigate()
     const { state } = useContext(AuthContext)
-
+    //git 
     useEffect(() => {
         state.logged === false && navigate('/login', { replace: true })
         return
