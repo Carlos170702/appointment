@@ -142,6 +142,14 @@ export const AuthProvider = ({ children }) => {
     };
 
     const getUserByEmail = async () => {
+        dispatch({
+            type: types.getUserByEmail,
+            payload: {
+                isLoading: true,
+                data: [],
+                hasHerror: []
+            },
+        })
         var formdata = new FormData();
         formdata.append("email", JSON.parse(localStorage.getItem('user'))?.email);
 
@@ -154,15 +162,27 @@ export const AuthProvider = ({ children }) => {
         try {
             const response = await fetch('https://citasapi.onrender.com/users/getUserByEmail/', requestOptions);
             const data = await response.json();
+                dispatch({
+                    type: types.getUserByEmail,
+                    payload: {
+                        isLoading: false,
+                        data : data?.Data,
+                        hasHerror: []
+                    },
+                })
 
-            console.log(data)
-
-            dispatch({
-                type: types.getUserByEmail,
-                payload: data,
-            })
         } catch (e) {
             console.log(e)
+            setTimeout(() => {
+                dispatch({
+                    type: types.getUserByEmail,
+                    payload: {
+                        isLoading: false,
+                        data: [],
+                        hasHerror: e
+                    },
+                })
+            }, 1000);
         }
 
     }
