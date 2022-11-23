@@ -43,6 +43,18 @@ export const authReducer = (state, action) => {
         },
       };
 
+    case types.citasClientPending:
+      return {
+        ...state,
+        citasClientPending: payload,
+      };
+
+    case types.getUserByEmail:
+      return {
+        ...state,
+        user: payload,
+      };
+
     default:
       return state;
   }

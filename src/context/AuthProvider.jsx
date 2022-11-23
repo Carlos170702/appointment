@@ -77,8 +77,107 @@ export const AuthProvider = ({ children }) => {
         })
     }
 
+    const getCitasPendingClient = async () => {
+        dispatch({
+            type: types.citasClientPending,
+            payload: {
+                isLoading: true,
+                isError: {},
+                data: [],
+            }
+        })
+        const headersList = {
+            Accept: "*/*",
+            "Content-Type": "application/json",
+        };
+
+        const bodyContent = JSON.stringify({
+            email: JSON.parse(localStorage.getItem("user")).email,
+        });
+
+        try {
+            const response = await fetch(
+                "https://citasapi.onrender.com/appointment/appointmentUser/0",
+                {
+                    method: "POST",
+                    body: bodyContent,
+                    headers: headersList,
+                }
+            );
+            const data = await response.json();
+            data.Status ?
+                setTimeout(() => {
+                    dispatch({
+                        type: types.citasClientPending,
+                        payload: {
+                            isLoading: false,
+                            isError: {},
+                            data: data.Appointment,
+                        }
+                    })
+                }, 1000)
+                :
+                setTimeout(() => {
+                    dispatch({
+                        type: types.citasClientPending,
+                        payload: {
+                            isLoading: false,
+                            isError: {},
+                            data: [],
+                        }
+                    })
+                }, 1000)
+        } catch (e) {
+            setTimeout(() => {
+                dispatch({
+                    type: types.citasClientPending,
+                    payload: {
+                        isLoading: false,
+                        isError: {},
+                        data: [],
+                    }
+                })
+            }, 1000)
+        }
+    };
+
+    const getUserByEmail = async () => {
+        var formdata = new FormData();
+        formdata.append("email", JSON.parse(localStorage.getItem('user'))?.email);
+
+        var requestOptions = {
+            method: 'POST',
+            body: formdata,
+            redirect: 'follow'
+        };
+
+        try {
+            const response = await fetch('https://citasapi.onrender.com/users/getUserByEmail/', requestOptions);
+            const data = await response.json();
+
+            console.log(data)
+
+            dispatch({
+                type: types.getUserByEmail,
+                payload: data,
+            })
+        } catch (e) {
+            console.log(e)
+        }
+
+    }
+
     return (
-        <AuthContext.Provider value={{ state, login, logout, getCitasPending, confirmAppointment, deleteAppointment }}>
+        <AuthContext.Provider value={{
+            state,
+            login,
+            logout,
+            getCitasPending,
+            confirmAppointment,
+            deleteAppointment,
+            getCitasPendingClient,
+            getUserByEmail
+        }}>
             {children}
         </AuthContext.Provider>
     )

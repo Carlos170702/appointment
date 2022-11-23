@@ -21,6 +21,8 @@ export const useFetch = () => {
       const resp = await fetch(url, options);
       const data = await resp.json();
 
+      console.log(data)
+
       setState({
         ...state,
         data,
@@ -35,6 +37,7 @@ export const useFetch = () => {
           ...state,
         });
       }, 2000);
+
       return data
     } catch (error) {
       setState({

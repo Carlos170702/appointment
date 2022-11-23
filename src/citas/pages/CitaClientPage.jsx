@@ -11,7 +11,7 @@ import '../css/CitaClient.css'
 import { useCitaClient } from '../hooks/useCitaClient'
 
 export const CitaClientPage = () => {
-  const { activeNew, handleNewCita, citasClient } = useCitaClient();
+  const { activeNew, handleNewCita, citasClientPending } = useCitaClient();
 
   return (
     <>
@@ -27,11 +27,11 @@ export const CitaClientPage = () => {
           </div>
           <div className="citas__countClient">
             {
-              citasClient?.isLoading && <Loading />
+              citasClientPending?.isLoading && <Loading />
             }
             {
-              citasClient.data.length > 0
-                ? citasClient?.data.map((item, index) => (
+              citasClientPending?.data.length > 0
+                ? citasClientPending?.data.map((item, index) => (
                   <div key={index} className='citasClient'>
                     <div className="citasClientImg">
                       <img src="https://i.pinimg.com/474x/92/c7/c7/92c7c750120016c44ec0b16837645c58.jpg" alt="image perfil" />

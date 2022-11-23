@@ -1,12 +1,10 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { AuthContext } from "../../context/authContext";
 
 export const useCitaClient = () => {
+  const { state, getCitasPendingClient } = useContext(AuthContext);
+  const { citasClientPending } = state;
   const [activeNew, setActiveNew] = useState(false);
-  const [citasClient, setCitasClient] = useState({
-    isLoading: false,
-    isError: {},
-    data: [],
-  });
 
   const handleNewCita = () => {
     setActiveNew(!activeNew);
@@ -14,45 +12,15 @@ export const useCitaClient = () => {
 
   useEffect(() => {
     (async () => {
-      setCitasClient({
-        isLoading: true,
-        isError: {},
-        data: [],
-      });
-      const headersList = {
-        Accept: "*/*",
-        "Content-Type": "application/json",
-      };
-
-      const bodyContent = JSON.stringify({
-        email: JSON.parse(localStorage.getItem("user")).email,
-      });
-
-      const response = await fetch(
-        "https://citasapi.onrender.com/appointment/appointmentUser/0",
-        {
-          method: "POST",
-          body: bodyContent,
-          headers: headersList,
-        }
-      );
-
-      const data = await response.json();
-      data.Status &&
-        setTimeout(() => {
-          setCitasClient({
-            isLoading: false,
-            isError: {},
-            data: data.Appointment,
-          });
-        }, 1000);
+      await getCitasPendingClient();
     })();
   }, []);
 
   return {
     //variables
+    state,
     activeNew,
-    citasClient,
+    citasClientPending,
     //metodos
     handleNewCita,
   };

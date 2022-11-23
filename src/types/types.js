@@ -3,5 +3,7 @@ export const types= {
     logout: 'auth_logout',
     citasPending: 'citasPending',
     deleteAppoint: 'deleteAppoint',
-    confirmAppoint: 'confirmAppoint'
+    confirmAppoint: 'confirmAppoint',
+    citasClientPending: 'citasClientPending',
+    getUserByEmail: 'getUserByEmail'
 }

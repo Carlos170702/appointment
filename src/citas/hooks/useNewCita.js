@@ -1,6 +1,9 @@
+import { useContext } from "react";
+import { AuthContext } from "../../context/authContext";
 import { useFetch } from "../../hooks/useFetch";
 
 export const useNewCita = () => {
+  const { getCitasPendingClient } = useContext(AuthContext);
   const { data, hasError, isLoading, message, getfetch } = useFetch();
 
   const handleNewAppointment = async (datos, handleNewCita) => {
@@ -26,6 +29,7 @@ export const useNewCita = () => {
     );
 
     data.Status && handleNewCita();
+    data.Status && await getCitasPendingClient();
   };
 
   return {

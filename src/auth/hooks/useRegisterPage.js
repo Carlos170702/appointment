@@ -30,6 +30,7 @@ export const useRegisterPage = () => {
         formdata.append("phone", formState?.number);
         formdata.append("email", formState?.email);
         formdata.append("password", formState?.password);
+
         const requestOptions = {
             method: "POST",
             body: formdata,

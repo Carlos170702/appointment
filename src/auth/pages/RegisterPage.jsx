@@ -11,6 +11,7 @@ import { Loading } from "../../components/Loading"
 
 export const RegisterPage = () => {
   const { data, isLoading, message, name, last__name, email, password, number, onInputChange, handleRegister } = useRegisterPage()
+  
   return (
     <>
       {
