@@ -1,5 +1,4 @@
 //components
-import { Cita } from '../components/Cita'
 import { NewCita } from './NewCita'
 import { NavBar } from '../../components/NavBar'
 import { Loading } from '../../components/Loading'
@@ -32,7 +31,7 @@ export const CitaClientPage = () => {
             {
               citasClientPending?.data.length > 0
                 ? citasClientPending?.data.map((item, index) => (
-                  <div key={index} className='citasClient'>
+                  <div key={index} className='citasClient animate__animated animate__bounceInLeft'>
                     <div className="citasClientImg">
                       <img src="https://i.pinimg.com/474x/92/c7/c7/92c7c750120016c44ec0b16837645c58.jpg" alt="image perfil" />
                     </div>

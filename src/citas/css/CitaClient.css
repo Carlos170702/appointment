@@ -5,6 +5,7 @@
 
 .citas__content__tittle__button {
   display: flex;
+  flex-wrap: wrap;
   background-color: rgb(34, 61, 142);
   padding: 10px;
   border-radius: 5px;
