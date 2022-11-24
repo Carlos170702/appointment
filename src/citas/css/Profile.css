@@ -34,7 +34,7 @@
 
 .profile__name {
     font-size: 30px;
-    font-family: var(--fontPrimary);
+    font-family: var(--fontSecundary);
     text-transform: uppercase;
 }
 
@@ -86,4 +86,22 @@
 
 .profile__data p {
     font-family: var(--fontSecundary);
+}
+
+@media (max-width: 850px) {
+    .profile{
+        flex-direction: column;
+    }
+    .profile__contentimg{
+        width: 100%;
+    }
+    .profile__contentinf{
+        width: 100%;
+    }
+    .profile__img{
+        width: 250px;
+    }
+    .profile__name{
+        font-size: 25px;
+    }
 }

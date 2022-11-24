@@ -21,8 +21,6 @@ export const useFetch = () => {
       const resp = await fetch(url, options);
       const data = await resp.json();
 
-      console.log(data)
-
       setState({
         ...state,
         data,

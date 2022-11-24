@@ -23,17 +23,21 @@ export const useRegisterPage = () => {
     const handleRegister = async (e) => {
         e.preventDefault();
 
-        const formdata = new FormData();
-        formdata.append("username", formState?.name);
-        formdata.append("lastname", formState?.last__name);
-        formdata.append("rol", 'client');
-        formdata.append("phone", formState?.number);
-        formdata.append("email", formState?.email);
-        formdata.append("password", formState?.password);
-
+        const myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
+        const raw = JSON.stringify({
+            "username": formState.name,
+            "lastname": formState.last__name,
+            "rol": "client",
+            "phone": formState.number,
+            "email": formState.email,
+            "password": formState.password,
+        });
         const requestOptions = {
-            method: "POST",
-            body: formdata,
+            method: 'POST',
+            headers: myHeaders,
+            body: raw,
+            redirect: 'follow'
         };
 
         const response = await getfetch(

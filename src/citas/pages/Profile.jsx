@@ -10,8 +10,7 @@ import { Loading } from '../../components/Loading';
 
 export const Profile = () => {
   const { user } = useProfile();
-  console.log(user)
-
+  
   return (
     <>
       <NavBar />
@@ -23,7 +22,6 @@ export const Profile = () => {
           <div className='profile__img'>
             <img src='https://i.dietdoctor.com/es/wp-content/uploads/2021/02/andreas-ipad-frontp-img-1.png?auto=compress%2Cformat&w=400&h=452&fit=crop' alt="imagen de doctor" />
           </div>
-          <h2 className='profile__name'>{user?.data[0]?.username}</h2>
         </div>
 
         <div className='profile__contentinf'>
