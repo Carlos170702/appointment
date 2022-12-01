@@ -6,20 +6,18 @@
 
 .App {
     width: 100%;
-    background-image: url(https://fondosmil.com/fondo/6731.jpg);
-    background-repeat: no-repeat;
+    /* background-image: url(https://fondosmil.com/fondo/6731.jpg); */
+    /* background-repeat: no-repeat;
     backdrop-filter: blur(50px);
     background-size: cover;
     background-position: center;
-    min-height: 100vh;
-    overflow: hidden;
+    min-height: 100vh; */
+    /* overflow: hidden; */
     position: relative;
 }
 
 .container {
     display: flex;
     flex-direction: column;
-    width: min(90%, 1200px);
-    margin: 0 auto;
     min-height: 100vh;
 }

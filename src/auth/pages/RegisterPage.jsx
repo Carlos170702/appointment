@@ -11,7 +11,7 @@ import { Loading } from "../../components/Loading"
 
 export const RegisterPage = () => {
   const { data, isLoading, message, name, last__name, email, password, number, onInputChange, handleRegister } = useRegisterPage()
-  
+
   return (
     <>
       {
@@ -21,7 +21,7 @@ export const RegisterPage = () => {
         <div className="login__content">
           <div className="login__Page">
             <div className="login__logo">
-              {/* <img src="" alt="" /> */}
+              <img src="https://firebasestorage.googleapis.com/v0/b/carrlitos-8c495.appspot.com/o/logo.png?alt=media&token=7457acd7-7779-41c6-b655-abd79df3df89" alt="logo de citas" />
             </div>
             <div className="login__tiitle">
               <h1>registro</h1>

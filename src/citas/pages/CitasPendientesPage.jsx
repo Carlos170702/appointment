@@ -5,14 +5,16 @@ import { Cita } from "../components/Cita"
 import { useCitasPendientesPage } from "../hooks/useCitasPendientesPage"
 //css
 import '../css/CitasPendientesPage.css'
+import { Loading } from "../../components/Loading"
 
 export const CitasPage = () => {
     const { state } = useCitasPendientesPage();
-
     return (
         <>
             <NavBar />
-
+            {
+                state.citasPending === undefined && <Loading />
+            }
             {
                 JSON.parse(localStorage.getItem('user')).rol === 'admin'
                     ? <div className="citas">

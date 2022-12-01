@@ -1,15 +1,119 @@
+:root {
+    --fontPrimary: "Kanit", sans-serif;
+    --fontSecundary: "Roboto Mono", monospace;
+  }
+
 .inicio{
-    background-color: rgba(255, 255, 255, 0.50);
-    backdrop-filter: blur(6px);
+    background-image: url(https://citadoctor.com.mx/wp-content/uploads/2022/03/citadoctormx.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 80vh;
+    font-family: var(--fontPrimary);
+    opacity: .9;
+    display: flex;
+    flex-direction: column;
+}
+
+.inicioContent{
+    background-color: #00000050;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* height: 100%; */
+    padding: 20px;
+    gap: 30px;
+}
+
+.inicioData{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 150px;
+    text-align: center;
+}
+
+.inicioTittle{
+    color: rgb(255, 255, 255);
+    font-size: 50px;
+    letter-spacing: 3px;   
+    font-family: var(--fontPrimary); 
+}
+
+.inicioRecervar{
+    text-decoration: none;
+    background-color: #a59bff;
+    border: none;
+    padding: 10px;
+    font-size: 18px;
+    color: white;
+    border-radius: 10px;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-family: var(--fontSecundary);
+    cursor: pointer;
+}
+
+.inicioRecervar:hover{
+    transform: scale(1.2);
+    transition: 1s ease;
+    background-color: #968afb;
+}
+
+.inicioInfo{
+    width: min(90%, 1200px);
+    margin: 20px auto;
+    display: flex;
+    gap: 10px;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.inicioInfoData{
+    width: 300px;
+    background-color: #f6f6f6;
+    padding: 10px;
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+.imgResolveContent{
+    margin-top: 50px;
+    overflow: hidden;
+}
+.inicioInfoData img{
     width: 100%;
 }
 
-.inicioLogo{
-    width: 400px;
-    height: 400px;
+.inicioInfoData p{
+    /* margin-top: -35px; */
+    font-family: var(--fontSecundary);
 }
 
-.inicioLogo img{
-    width: 100%;
-    height: 100%;
+.imgResolve{
+    margin-top: -100px;
+}
+
+.infResolve{
+    margin-top: 50px;
+}
+
+@media (max-width: 1000px) {
+    .inicioInfoData{
+        width: 200px;
+    }
+}
+
+@media (max-width: 750px) {
+
+    .inicioInfoData img{
+        width: 300px;
+    }
+
+    .inicioInfoData{
+        width: 100%;
+    }
 }

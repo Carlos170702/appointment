@@ -5,9 +5,6 @@ import { Message } from '../../components/Message'
 // react-router
 import { Link } from 'react-router-dom'
 
-//assets
-import image from '../../components/logo.png'
-
 //icons
 import { FiLogIn } from 'react-icons/fi'
 
@@ -29,7 +26,7 @@ export const LoginPage = () => {
                 <div className="login__content">
                     <div className="login__Page">
                         <div className="login__logo">
-                            <img src={image} alt="imagen logo" />
+                            <img src="https://firebasestorage.googleapis.com/v0/b/carrlitos-8c495.appspot.com/o/logo.png?alt=media&token=7457acd7-7779-41c6-b655-abd79df3df89" alt="imagen logo" />
                         </div>
                         <div className="login__tiitle">
                             <h1>Login</h1>

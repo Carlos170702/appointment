@@ -4,7 +4,7 @@
 }
 
 .profile {
-    width: 95%;
+    width: min(90%, 1200px);
     margin: auto;
     display: flex;
     flex-wrap: wrap;
@@ -17,7 +17,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: white;
+    background-color: #dddddd;
     width: 50%;
     /* flex: 1; */
     padding: 10px;
