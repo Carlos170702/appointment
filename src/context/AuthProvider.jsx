@@ -92,7 +92,7 @@ export const AuthProvider = ({ children }) => {
         };
 
         const bodyContent = JSON.stringify({
-            email: JSON.parse(localStorage.getItem("user")).email,
+            email: JSON.parse(localStorage.getItem("user"))?.email,
         });
 
         try {

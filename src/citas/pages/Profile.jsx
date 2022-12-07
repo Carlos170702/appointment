@@ -7,15 +7,23 @@ import { useProfile } from '../hooks/useProfile'
 //componentes
 import { NavBar } from "../../components/NavBar"
 import { Loading } from '../../components/Loading';
+import { Warning } from '../../components/Warning';
+import { UpdateUser } from './UpdateUser';
 
 export const Profile = () => {
-  const { user } = useProfile();
-  
+  const { update, user, warning, warningView, DeleteAccount, UpdateUserView } = useProfile();
+
   return (
     <>
       <NavBar />
       {
         user?.isLoading && <Loading />
+      }
+      {
+        warning && <Warning warningView={warningView} DeleteAccount={DeleteAccount} />
+      }
+      {
+        update && <UpdateUser UpdateUserView={UpdateUserView} />
       }
       <div className='profile'>
         <div className='profile__contentimg'>
@@ -46,6 +54,11 @@ export const Profile = () => {
           <div className='profile__data'>
             <h2 className=''>Rol</h2>
             <p>{user?.data[0]?.rol}</p>
+          </div>
+          <div className='profile__deleteandUpdate'>
+            <button className='profile__btn profile__update'
+              onClick={UpdateUserView}>Actualizar cuenta</button>
+            <button className='profile__btn profile__delete' onClick={warningView}>Eliminar Cuenta</button>
           </div>
         </div>
       </div>

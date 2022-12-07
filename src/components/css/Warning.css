@@ -1,0 +1,72 @@
+:root {
+  --fontPrimary: "Kanit", sans-serif;
+  --fontSecundary: "Roboto Mono", monospace;
+}
+
+.warning {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  overflow: auto;
+  background-color: #474e5d;
+}
+
+.warning__Exit {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  right: 20px;
+  top: 20px;
+  cursor: pointer;
+  color: white;
+  font-size: 30px;
+}
+
+.warning__content {
+  margin: auto;
+  width: min(90%, 600px);
+  padding: 20px;
+  background-color: white;
+  margin-top: 150px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.warning__content h2 {
+  font-weight: 900;
+  font-size: 30px;
+  font-family: var(--fontSecundary);
+  text-align: center;
+}
+
+.warning__content p {
+  color: #818080;
+  text-align: center;
+  font-size: large;
+}
+
+.warning__btns {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.warning__btn {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  font-family: var(--fontPrimary);
+  font-weight: bold;
+  font-size: 12px;
+  color: white;
+  cursor: pointer;
+}
+
+.warning__btn--delete {
+  background-color: rgb(239, 61, 61);
+}
+
+.warning__btn--update {
+  background-color: #e2e2e2;
+  color: black;
+}

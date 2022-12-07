@@ -10,6 +10,7 @@
     flex-wrap: wrap;
     border-radius: 20px;
     overflow: hidden;
+    
 }
 
 .profile__contentimg {
@@ -86,6 +87,31 @@
 
 .profile__data p {
     font-family: var(--fontSecundary);
+}
+
+.profile__deleteandUpdate{
+    display: flex;
+    gap: 30px;
+    justify-content: right;
+    width: 100%;
+}
+
+.profile__btn{
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+    cursor: pointer;
+}
+
+.profile__delete{
+    background-color: rgb(206, 50, 50);   
+}
+
+.profile__update{
+    background-color: rgb(31, 191, 31);
 }
 
 @media (max-width: 850px) {

@@ -1,0 +1,88 @@
+:root {
+    --fontPrimary: "Kanit", sans-serif;
+    --fontSecundary: "Roboto Mono", monospace;
+}
+
+.UpdateUser{
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.812);
+    width: 100%;
+    height: 100%;
+    padding: 50px 0px;
+}
+
+.UpdateUser__exit{
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    color: white;
+    cursor: pointer;
+    height: 40px;
+}
+
+.UpdateUser__content{
+    width: min(90%, 800px);
+    margin: auto;
+    background-color: rgb(239, 239, 239);
+    height: 100%;
+}
+
+.UpdateUser__tittle{
+    color: white;
+    background-color: rgb(26, 125, 255);
+    padding: 10px;
+    font-size: 25px;
+    text-align: center;
+    font-family: var(--fontPrimary);
+}
+
+.UpdateUser__form{
+    margin: auto;
+    width: min(100%, 600px);
+    padding: 50px 10px;
+}
+
+.UpdateUser__Inf{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.UpdateUser__Inf label{
+    font-family: var(--fontSecundary);
+    font-weight: bold;
+}
+
+.UpdateUser__Inf input{
+    border: none;
+    padding: 10px;
+    font-family: var(--fontPrimary);
+    font-size: 12px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.UpdateUser__btns{
+    width: 100%;
+
+}
+
+.UpdateUser__btn{
+    padding: 10px;
+    border: none;
+    margin: auto;
+    width: 100px;
+    background-color: rgb(63, 188, 63);
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+    outline: none;
+}
